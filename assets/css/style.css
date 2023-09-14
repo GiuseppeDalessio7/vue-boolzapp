@@ -1,0 +1,33 @@
+body{
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--bz-app-principal);
+}
+
+
+:root {
+    --bz-app-principal: #DBDBD2;
+    --bz-app-header: #009688;
+    --bz-app-success: #D5F9BA;
+    --bz-app-light: #E9EBEB;
+    --bz-app-white: #FFFFFF;
+    --bz-app-focus: #8EDAFC;
+}
+
+.my_header{
+    background-color: var(--bz-app-header);
+    width: 100vw;
+    height: 4.375rem;
+}
+
+img{
+    width: 25px;
+    border-radius: 50%;
+}
+
+span{
+    font-size: 10px;
+}
+
+.mynavbar{
+    background-color: var(--bz-app-light);
+}
