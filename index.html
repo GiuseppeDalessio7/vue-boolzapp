@@ -53,7 +53,7 @@
                 </div>
                 <!-- /.searcharea -->
                 <div class="contacts">
-                  <div class="contact" @click="attivachat" :class="index === activeContact ? 'active' : 'bg-danger'" v-for="(contact, index) in contacts">
+                  <div class="contact" @click="attivachat(index)" :class="index === activeContact ? 'active' : ''" v-for="(contact, index) in contacts">
                     <div class="avatar">
                       <img :src="`./assets/img/avatar${contacts[index].avatar}.jpg`" alt="">
                     </div>
