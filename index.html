@@ -1,42 +1,146 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Boolzapp</title>
-        <link
-            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
-            rel="stylesheet"
-            integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9"
-            crossorigin="anonymous">
-        <link rel="stylesheet" href="./assets/css/style.css">
-        <link rel="stylesheet"
-            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-    </head>
-    <body>
 
-        <div id="app">
-
-            <div class="my_header">
-                <div class="container pt-3">
-                    <nav class=" mynavbar w-50">
-                        <div class="d-flex align-items-center">
-                                <img src="./assets/img/avatar_io_360.jpg" alt> <span
-                                class="text-center">Sofia</span>
-                                <div class="align-content-end">
-                                <i class="fa-solid fa-circle-notch fa-2xs"
-                                    style="color: #949494;"></i>
-                                <i class="fa-solid fa-message fa-2xs"
-                                    style="color: #949494;"></i>
-                                <i class="fa-solid fa-ellipsis-vertical fa-2xs"
-                                    style="color: #949494;"></i>
-                                </div>
-                            </div>
-                        </div>
-                    </nav>
-
+        <!doctype html>
+        <html lang='en'>
+        
+        <head>
+          <meta charset='utf-8'>
+          <meta name='viewport' content='width=device-width, initial-scale=1'>
+          <title>Boolzapp </title>
+          <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css'
+            integrity='sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=='
+            crossorigin='anonymous' referrerpolicy='no-referrer' />
+            <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+          <link href='./assets/css/style.css' rel='stylesheet'>
+        </head>
+        
+        <body class="debug">
+          <div id='app'>
+            <div class="wrapper">
+              <div class="left">
+                <div class="user">
+                  <div class="me">
+                    <div class="avatar">
+                      <img :src="`./assets/img/avatar${me.avatar}.jpg`" alt="">
+                    </div>
+                    <div class="name">{{me.name}}</div>
+                  </div>
+                  <div class="actions">
+                    <i class="fa-solid fa-circle-notch fa-lg fa-fw"></i>
+                    <i class="fa-solid fa-comment fa-lg  fa-fw"></i>
+                    <i class="fa-solid fa-ellipsis-v fa-lg fa-fw"></i>
+                  </div>
                 </div>
+                <!-- /.user -->
+                <div class="notifications">
+                  <div class="bell">
+                    <i class="fa-solid fa-bell-slash fa-lg fa-fw"></i>
+                  </div>
+                  <div class="text">
+                    <p>Ricevi notifiche di nuovi messaggi</p>
+                    <a href="#">
+                      Attiva notifiche desktop
+                    </a>
+                  </div>
+                </div>
+                <!-- /.notifications -->
+                <div class="searcharea">
+                    <div class="input-group mb-3 ">
+                        <span class="input-group-text " id="inputGroup-sizing-default"><i class="fa-solid fa-magnifying-glass fa-2xs" 
+                            style="color: #a8a8a8;"></i></span>
+                        <input type="text" class="form-control" aria-label="Sizing example input w-75" aria-describedby="inputGroup-sizing-default" placeholder="cerca o inizia una nuova chat">
+                      </div>
+                  
+                  
+                  
+                    
+                    <!-- <input type="text" placeholder="cerca o inizia un nuova chat"> -->
+                </div>
+                <!-- /.searcharea -->
+                <div class="contacts">
+                  <div class="contact" :class="index === activeContact ? 'active' : ''" v-for="(contact, index) in contacts">
+                    <div class="avatar">
+                      <img :src="`./assets/img/avatar${contact.avatar}.jpg`" alt="">
+                    </div>
+                    <div class="text">
+                      {{contact.name}}
+                    </div>
+                  </div>
+          
+        
+        
+                </div>
+                <!-- /.conacts -->
+              </div>
+              <!-- /.left -->
+              <div class="right">
+                <div class="active_contact">
+        
+                  <div class="contact_details">
+                    <div class="avatar">
+                      <img :src="`./assets/img/avatar${me.avatar}.jpg`" alt="">
+                    </div>
+                    <div class="name">{{me.name}}</div>
+                  </div>
+                  <div class="actions">
+                    <i class="fa-solid fa-circle-notch fa-lg fa-fw"></i>
+                    <i class="fa-solid fa-comment fa-lg  fa-fw"></i>
+                    <i class="fa-solid fa-ellipsis-v fa-lg fa-fw"></i>
+                  </div>
+        
+                </div>
+                <!-- /.active_contact -->
+                <div class="messages">
+                  <div class="sent">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis, veritatis.
+                  </div>
+                     <div class="sent">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis, veritatis.
+                  </div>
+                  <div class="received">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis, veritatis.
+                  </div>
+        
+                </div>
+                <!-- /.messages -->
+                <div class="toolbar">
+                  <div class="emoji">
+                    <i class="fa-solid fa-smile    "></i>
+                  </div>
+                  <input type="text">
+                  <div class="mic">
+                    <i class="fa-solid fa-microphone"></i>
+                  </div>
+                </div>
+                <!-- /.toolbar -->
+              </div>
+              <!-- /.right -->
             </div>
+          </div>
+          <!-- Development only cdn, disable in production -->
+          <script src='https://unpkg.com/vue@3/dist/vue.global.js'></script>
+          <script src='./assets/js/myscript.js'></script>
+        </body>
+        
+        </html>
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+
+      
+      
 
 
 
