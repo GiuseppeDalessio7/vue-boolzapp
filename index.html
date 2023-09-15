@@ -53,9 +53,9 @@
                 </div>
                 <!-- /.searcharea -->
                 <div class="contacts">
-                  <div class="contact" :class="index === activeContact ? 'active' : ''" v-for="(contact, index) in contacts">
+                  <div class="contact" @click="attivachat" :class="index === activeContact ? 'active' : 'bg-danger'" v-for="(contact, index) in contacts">
                     <div class="avatar">
-                      <img :src="`./assets/img/avatar${contact.avatar}.jpg`" alt="">
+                      <img :src="`./assets/img/avatar${contacts[index].avatar}.jpg`" alt="">
                     </div>
                     <div class="text">
                       {{contact.name}}
@@ -72,7 +72,7 @@
                 <div class="active_contact">
         
                   <div class="contact_details">
-                    <div class="avatar">
+                    <div class="avatar" vfor="(avatar, index) in contacts">
                       <img :src="`./assets/img/avatar${me.avatar}.jpg`" alt="">
                     </div>
                     <div class="name">{{me.name}}</div>
@@ -85,9 +85,9 @@
         
                 </div>
                 <!-- /.active_contact -->
-                <div class="messages" vfor="(message, index) in activeContactMessages" :key="index">
+                <div class="messages">
                   <div class="sent">
-                    {{messages.message(contact)}}
+                   Lorem, ipsum.
                   </div>
                      <div class="sent">
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis, veritatis.

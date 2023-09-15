@@ -172,21 +172,9 @@ createApp({
   },
 
   methods:{
-    computed: {
-      activeContactMessages() {
-        // Recupera l'indice del contatto attivo
-        const activeIndex = this.activeContact;
-    
-        // Verifica se l'indice è valido e restituisci i messaggi del contatto attivo
-        if (activeIndex >= 0 && activeIndex < this.contacts.length) {
-          return this.contacts[activeIndex].messages;
-        }
-    
-        // Se l'indice non è valido, restituisci un array vuoto
-        return [];
-      }
-    },
-    
+  attivachat(index){
+    this.activeContact = index
+  }
   }
 }).mount('#app')
 
