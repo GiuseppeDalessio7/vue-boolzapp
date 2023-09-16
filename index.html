@@ -55,7 +55,7 @@
                 <div class="contacts">
                   <div class="contact" @click="attivachat(index)" :class="index === activeContact ? 'active' : ''" v-for="(contact, index) in contacts">
                     <div class="avatar">
-                      <img :src="`./assets/img/avatar${contacts[index].avatar}.jpg`" alt="">
+                      <img :src="contact.avatar" alt="">
                     </div>
                     <div class="text">
                       {{contact.name}}
@@ -72,10 +72,10 @@
                 <div class="active_contact">
         
                   <div class="contact_details">
-                    <div class="avatar" vfor="(avatar, index) in contacts">
-                      <img :src="`./assets/img/avatar${me.avatar}.jpg`" alt="">
+                    <div class="avatar" >
+                      <img :src="contacts[activeContact].avatar" alt="">
                     </div>
-                    <div class="name">{{me.name}}</div>
+                    <div class="name">{{contacts[activeContact].name}}</div>
                   </div>
                   <div class="actions">
                     <i class="fa-solid fa-circle-notch fa-lg fa-fw"></i>
@@ -86,15 +86,13 @@
                 </div>
                 <!-- /.active_contact -->
                 <div class="messages">
-                  <div class="sent">
-                   Lorem, ipsum.
+                  
+            
+                  <div class="d-flex flex-column" v-for="messaggi in contacts[activeContact].messages">
+                    <div :class="messaggi.status === 'sent' ? 'sent' : 'received'  ">{{messaggi.message}}</div>
                   </div>
-                     <div class="sent">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis, veritatis.
-                  </div>
-                  <div class="received">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis, veritatis.
-                  </div>
+                  
+                  
         
                 </div>
                 <!-- /.messages -->
