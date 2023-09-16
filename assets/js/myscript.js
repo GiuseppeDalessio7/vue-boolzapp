@@ -7,6 +7,7 @@ const {
 createApp({
   data() {
     return {
+      newMessagge: "",
       me: {
         avatar: '_io',
         name: 'Sofia'
@@ -18,21 +19,22 @@ createApp({
           name: 'Michele',
           avatar: './assets/img/avatar_1.jpg',
           visible: true,
-          messages: [{
-            date: '10/01/2020 15:30:55',
-            message: 'Hai portato a spasso il cane?',
-            status: 'sent'
-          },
-          {
-            date: '10/01/2020 15:50:00',
-            message: 'Ricordati di stendere i panni',
-            status: 'sent'
-          },
-          {
-            date: '10/01/2020 16:15:22',
-            message: 'Tutto fatto!',
-            status: 'received'
-          }
+          messages: [
+            {
+              date: '10/01/2020 15:30:55',
+              message: 'Hai portato a spasso il cane?',
+              status: 'sent'
+            },
+            {
+              date: '10/01/2020 15:50:00',
+              message: 'Ricordati di stendere i panni',
+              status: 'sent'
+            },
+            {
+              date: '10/01/2020 16:15:22',
+              message: 'Tutto fatto!',
+              status: 'received'
+            }
           ],
         },
         {
@@ -171,14 +173,60 @@ createApp({
     }
   },
 
-  methods:{
-  attivachat(index){
-    this.activeContact = index
-  }
+  methods: {
+    attivachat(index) {
+      this.activeContact = index
+    },
 
-  
+    addMessage() {
+      // console.log(this.activeContact);
+      let inviomessaggio = {
+        date: "11.00",
+        message: this.newMessagge,
+        status: 'sent',
+      }
+      this.contacts[this.activeContact].messages.push(inviomessaggio);
+      this.newMessagge = "" // il this indica l'oggetto
+
+      setTimeout(() => {
+        let reply = {
+        date: "11.10",
+        message: "ok",
+        status: 'received',}
+        this.contacts[this.activeContact].message.push(reply)
+          },1000)
+    },
+
   }
 }).mount('#app')
+
+
+
+    // reply() {
+    // let risposta = {
+    // date: "12.00",
+    // message: "ok",
+    // status: 'received',
+    // }
+    // this.contacts[this.activeContact].messages = this.setTimeout(reply) 
+    // {
+    // this.contacts[this.activeContact].messages.push(risposta);
+    // } 1000
+    // }
+
+
+    // setTimeout(() => {
+    // this.contacts[this.activeContact].messages.push({
+    // date: this.setDate(),
+    // message: 'ok',
+    // status: 'received'
+    // });
+    // }, 1000);
+
+
+
+
+
 
 
 

@@ -98,9 +98,9 @@
                 <!-- /.messages -->
                 <div class="toolbar">
                   <div class="emoji">
-                    <i class="fa-solid fa-smile    "></i>
+                    <i class="fa-solid fa-smile"></i>
                   </div>
-                  <input type="text">
+                  <input v-model="newMessagge" type="text" @keyup.enter="addMessage">
                   <div class="mic">
                     <i class="fa-solid fa-microphone"></i>
                   </div>
