@@ -1,12 +1,12 @@
 
-
-
 const {
   createApp
 } = Vue
 createApp({
   data() {
     return {
+      
+      contactName: "",
       newMessagge: "",
       me: {
         avatar: './assets/img/avatar_2.jpg',
@@ -181,7 +181,7 @@ createApp({
     addMessage() {
       // console.log(this.activeContact);
       let inviomessaggio = {
-        date: "11.00",
+        date: "15.45",
         message: this.newMessagge,
         status: 'sent',
       }
@@ -190,13 +190,21 @@ createApp({
 
       setTimeout(() => {
         let reply = {
-          date: "11.10",
+          date: "15.50",
           message: "ok",
           status: 'received',
         }
         this.contacts[this.activeContact].messages.push(reply)
       }, 1000)
     },
+
+    searchContact(){
+    
+    
+    
+    }
+
+
 
   }
 }).mount('#app')
