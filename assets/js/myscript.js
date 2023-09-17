@@ -9,8 +9,8 @@ createApp({
     return {
       newMessagge: "",
       me: {
-        avatar: '_io',
-        name: 'Sofia'
+        avatar: './assets/img/avatar_2.jpg',
+        name: 'Giuseppe'
       },
       activeContact: 0,
       contacts: [
@@ -38,8 +38,8 @@ createApp({
           ],
         },
         {
-          name: 'Fabio',
-          avatar: './assets/img/avatar_2.jpg',
+          name: 'Sofia',
+          avatar: './assets/img/avatar_io.jpg',
           visible: true,
           messages: [{
             date: '20/03/2020 16:30:00',
@@ -186,15 +186,16 @@ createApp({
         status: 'sent',
       }
       this.contacts[this.activeContact].messages.push(inviomessaggio);
-      this.newMessagge = "" // il this indica l'oggetto
+      this.newMessagge = ""; // il this indica l'oggetto
 
       setTimeout(() => {
         let reply = {
-        date: "11.10",
-        message: "ok",
-        status: 'received',}
-        this.contacts[this.activeContact].message.push(reply)
-          },1000)
+          date: "11.10",
+          message: "ok",
+          status: 'received',
+        }
+        this.contacts[this.activeContact].messages.push(reply)
+      }, 1000)
     },
 
   }
@@ -202,26 +203,6 @@ createApp({
 
 
 
-    // reply() {
-    // let risposta = {
-    // date: "12.00",
-    // message: "ok",
-    // status: 'received',
-    // }
-    // this.contacts[this.activeContact].messages = this.setTimeout(reply) 
-    // {
-    // this.contacts[this.activeContact].messages.push(risposta);
-    // } 1000
-    // }
-
-
-    // setTimeout(() => {
-    // this.contacts[this.activeContact].messages.push({
-    // date: this.setDate(),
-    // message: 'ok',
-    // status: 'received'
-    // });
-    // }, 1000);
 
 
 
