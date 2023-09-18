@@ -67,7 +67,7 @@
            
             <!-- <small>{{searchText}}</small> -->
             <template v-for="(contact, index) in contacts">
-              <div  class="contact " @click="attivachat(index)"
+              <div class="contact" @click="attivachat(index)"
                 v-if="contact.visible"
                 :class="index === activeContact ? 'active' : ''"
                 >
