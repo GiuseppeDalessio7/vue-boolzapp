@@ -178,9 +178,10 @@ createApp({
     },
 
     addMessage() {
+      
       // console.log(this.activeContact);
       let inviomessaggio = {
-        date: "15.45",
+        date: "18:05", 
         message: this.newMessagge,
         status: 'sent',
       }
@@ -189,7 +190,7 @@ createApp({
 
       setTimeout(() => {
         let reply = {
-          date: "15.50",
+          date: "18:05",
           message: "ok",
           status: 'received',
         }
@@ -221,6 +222,13 @@ createApp({
       });
      
   },
+
+  
+  
+  
+  
+  
+  
 
 
   }
