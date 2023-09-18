@@ -78,13 +78,13 @@ body
 .left > .user
 {
   background-color: var(--bz-gray-light);
-  padding: 1rem;
+  padding: 0.75rem;
 }
 
 .left > .notifications
 {
   background-color: var(--bz-sky);
-  padding: 1rem;
+  padding: 0.50rem;
 }
 
 .left > .searcharea
@@ -96,7 +96,7 @@ body
 .contacts
 {
   overflow-y: scroll;
-  height: calc(100% - 220px);
+  height: calc(100% - 245px);
 }
 
 .contact
@@ -107,6 +107,7 @@ body
   padding: 0.5rem;
   background-color: var(--bz-white);
   border: 1px solid var(--bz-gray-light);
+  
 }
 
 .contact.active
@@ -177,6 +178,7 @@ body
   background-image: url('../img/mine.jpg');
   width: 100%;
   flex-grow: 1;
+  overflow: auto;
 
 }
 
@@ -198,7 +200,7 @@ body
 {
   display: flex;
   align-items: center;
-  padding: 1rem;
+  padding: 0.75rem;
 }
 
 .toolbar
