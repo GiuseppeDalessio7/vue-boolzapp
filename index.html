@@ -63,20 +63,22 @@
            
           </div>
           <!-- /.searcharea -->
-          <div class="contacts">
+          <div class="contacts"> 
+           
             <!-- <small>{{searchText}}</small> -->
-
-            <div  class="contact " @click="attivachat(index)"
-              :class="index === activeContact ? 'active' : ''"
-              v-for="(contact, index) in contacts">
-              <div class="avatar">
-                <img :src="contact.avatar" alt>
+            <template v-for="(contact, index) in contacts">
+              <div  class="contact " @click="attivachat(index)"
+                v-if="contact.visible"
+                :class="index === activeContact ? 'active' : ''"
+                >
+                <div class="avatar">
+                  <img :src="contact.avatar" alt>
+                </div>
+                <div class="text">
+                  {{contact.name}}
+                </div>
               </div>
-              <div class="text">
-                {{contact.name}}
-              </div>
-            </div>
-
+            </template>
           </div>
           <!-- /.conacts -->
         </div>

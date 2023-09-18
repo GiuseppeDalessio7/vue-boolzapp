@@ -200,7 +200,7 @@ createApp({
 
     searchName() {  
             
-      this.contacts.forEach(contact => {
+      this.contacts.forEach((contact, index) => {
 
           const lowerSearch = this.searchText.toLowerCase();
           const lowerName = contact.name.toLowerCase();
@@ -210,18 +210,16 @@ createApp({
 
           if (lowerName.includes(lowerSearch)) {
               
-              contact.visible = true;
+             this.contacts[index].visible = true;
               
               console.log(contact.visible);
           } else {
 
-              contact.visible = false;
-              // console.log(contact.visible);
-          }
-          
+             this.contacts[index].visible = false;
+              console.log(this.contacts[index].name);
+          }     
       });
      
-
   },
 
 
