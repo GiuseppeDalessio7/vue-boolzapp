@@ -6,7 +6,7 @@ createApp({
   data() {
     return {
       
-      contactName: "",
+      searchNameContact: "",
       newMessagge: "",
       me: {
         avatar: './assets/img/avatar_2.jpg',
@@ -200,7 +200,8 @@ createApp({
 
     searchContact(){
     
-    
+      const searchNameContact = this.searchNameContact.toLowerCase();
+      return this.contacts[this.activeContact].name.filter(toLowerCase().includes(searchNameContact));
     
     }
 
