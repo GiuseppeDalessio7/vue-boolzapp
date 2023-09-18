@@ -258,6 +258,13 @@ body
 }
 
 
+.mysize{
+  font-size: 12px;
+  color: var(--bz-dark-gray);
+}
+
+
+
 /* #endregion Messages section */
 
 

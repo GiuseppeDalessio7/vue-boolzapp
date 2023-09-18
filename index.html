@@ -49,7 +49,8 @@
                         <span class="input-group-text " id="inputGroup-sizing-default"><i class="fa-solid fa-magnifying-glass fa-2xs" 
                             style="color: #a8a8a8;"></i></span>
                         <input type="text" class="form-control"
-                        v-model="searchNameContact"
+                        v-model="searchText"
+                      
                           
                          aria-label="Sizing example input "  placeholder="cerca o inizia una nuova chat">
                          
@@ -58,7 +59,7 @@
                 </div>
                 <!-- /.searcharea -->
                 <div class="contacts">
-                  <small>{{searchNameContact}}</small>
+                  <small>{{searchText}}</small>
                   <div class="contact" @click="attivachat(index)" :class="index === activeContact ? 'active' : ''" v-for="(contact, index) in contacts">
                     <div class="avatar">
                       <img :src="contact.avatar" alt="">
@@ -77,11 +78,18 @@
               <div class="right">
                 <div class="active_contact">
                   <div class="contact_details">
+                   
+                    
                     <div class="avatar" >
+                      
                       <img :src="contacts[activeContact].avatar" alt="">
+                      
                     </div>
-                    <div class="name">{{contacts[activeContact].name}}</div>
+                    <div class="name">{{contacts[activeContact].name}}
+                      <span class="d-flex mysize">ultimo accesso oggi alle ore 12:00</span>
+                    </div>
                   </div>
+                 
                   <div class="actions">
                     <i class="fa-solid fa-circle-notch fa-lg fa-fw"></i>
                     <i class="fa-solid fa-comment fa-lg  fa-fw"></i>
@@ -94,7 +102,9 @@
                   
             
                   <div class="d-flex flex-column" v-for="messaggi in contacts[activeContact].messages">
-                    <div :class="messaggi.status === 'sent' ? 'sent' : 'received'  ">{{messaggi.message}}</div>
+                    <div :class="messaggi.status === 'sent' ? 'sent' : 'received'  ">{{messaggi.message}}
+                      <small class="d-flex justify-content-end mysize">{{messaggi.date}}</small>
+                    </div>
                   </div>
                   
                   
