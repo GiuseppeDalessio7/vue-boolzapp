@@ -197,28 +197,32 @@ createApp({
       }, 1000)
     },
 
-   
-   
- 
- 
- 
 
- 
- 
- 
- 
- 
-   
-   
+    searchName() {  
+            
+      this.contacts.forEach(contact => {
 
-   
-   
-   
-   
-   
-   
-   
+          const lowerSearch = this.searchText.toLowerCase();
+          const lowerName = contact.name.toLowerCase();
+          
+          console.log(lowerName);
 
+
+          if (lowerName.includes(lowerSearch)) {
+              
+              contact.visible = true;
+              
+              console.log(contact.visible);
+          } else {
+
+              contact.visible = false;
+              // console.log(contact.visible);
+          }
+          
+      });
+     
+
+  },
 
 
   }
